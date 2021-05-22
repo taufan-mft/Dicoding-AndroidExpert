@@ -1,2 +1,3 @@
 rootProject.name = "Android Expert"
 include ':app'
+include ':core'
