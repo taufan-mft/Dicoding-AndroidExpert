@@ -12,5 +12,6 @@ data class Film(
     val backdropPath: String,
     val voteAverage: String,
     val year: String,
-    val overview: String
+    val overview: String,
+    val rating: String?
 )
