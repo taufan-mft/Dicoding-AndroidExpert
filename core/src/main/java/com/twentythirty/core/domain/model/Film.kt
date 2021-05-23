@@ -7,7 +7,6 @@ data class Film(
     val id: Int,
     val title: String,
     val releaseDate: String,
-    val popularity: String,
     val posterPath: String,
     val backdropPath: String,
     val voteAverage: String,

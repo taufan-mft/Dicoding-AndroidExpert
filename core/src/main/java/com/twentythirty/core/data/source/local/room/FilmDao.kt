@@ -1,15 +1,13 @@
 package com.twentythirty.core.data.source.local.room
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.twentythirty.core.data.source.local.entity.FilmEntity
 import kotlinx.coroutines.flow.Flow
 
 /**
  * Created by taufan-mft on 5/22/2021.
  */
+@Dao
 interface FilmDao {
     companion object {
         const val TABLE_NAME = "film_table"

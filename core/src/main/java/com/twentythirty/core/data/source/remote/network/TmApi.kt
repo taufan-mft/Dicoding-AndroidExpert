@@ -11,7 +11,7 @@ import retrofit2.http.Path
  */
 interface TmApi {
     @GET("trending/movie/day?api_key=7f85d423ec1dba1aab33327dfb3fd290")
-    suspend fun getFilms(): List<FilmResponse>
+    suspend fun getFilms(): FilmResponse
 
     @GET("https://api.themoviedb.org/3/movie/{movieID}?api_key=7f85d423ec1dba1aab33327dfb3fd290&language=en-US")
     suspend fun getFilmDetail(@Path("movieID") movieID: Int): FilmDetailResponse
