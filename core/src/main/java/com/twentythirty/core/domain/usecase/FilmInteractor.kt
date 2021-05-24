@@ -13,4 +13,11 @@ class FilmInteractor(private val filmRepository: FilmRepository) : FilmUseCase {
     override fun getFilmDetail(movieId: Int): Flow<Resource<Film>> =
         filmRepository.getMovieDetail(movieId)
 
+    override fun getAllFavoriteFilms(): Flow<List<Film>> = filmRepository.getFavoriteFilms()
+    override fun setFavoriteFilm(film: Film, state: Boolean) =
+        filmRepository.setFavoriteMovie(film, state)
+
+    override suspend fun getFavoriteState(film: Film): Boolean {
+        return filmRepository.getFavoriteState(film)
+    }
 }

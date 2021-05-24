@@ -33,6 +33,27 @@ object DataMapper {
         return list
     }
 
+    fun mapEntitiesToDomain(film: List<FilmEntity>): List<Film> {
+        val list = mutableListOf<Film>()
+        for (fil in film) {
+            val payload = Film(
+                id = fil.id,
+                title = fil.title,
+                releaseDate = "-",
+                posterPath = fil.photo,
+                backdropPath = "-",
+                voteAverage = "-",
+                year = fil.year,
+                overview = "-",
+                rating = "-",
+                tags = null
+            )
+            list.add(payload)
+        }
+        return list
+
+    }
+
     fun mapResponsesToDomain(film: FilmResponse.Result): Film {
         return Film(
             id = film.id,

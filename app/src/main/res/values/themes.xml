@@ -20,11 +20,12 @@
     </style>
 
     <!-- ActionBar styles -->
-    <style name="CustomActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="CustomActionBar" parent="Widget.AppCompat.ActionBar">
         <item name="background">@color/white</item>
         <item name="titleTextStyle">@style/Theme.AppLib.ActionBar.TitleTextStyle</item>
         <item name="buttonGravity">center_vertical</item>
     </style>
+
 
     <style name="Theme.AppLib.ActionBar.TitleTextStyle" parent="">
         <item name="android:textColor">@color/black</item>

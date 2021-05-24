@@ -6,9 +6,12 @@ import com.twentythirty.core.domain.model.Film
 import com.twentythirty.core.domain.repository.IFilmRepository
 import com.twentythirty.core.utils.DataMapper
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.launch
 
 /**
  * Created by taufan-mft on 5/23/2021.
@@ -47,11 +50,20 @@ class FilmRepository(
     }
 
     override fun getFavoriteFilms(): Flow<List<Film>> {
-        TODO("Not yet implemented")
+        return localDataSource.getAllFavoriteFilms().map {
+            DataMapper.mapEntitiesToDomain(it)
+        }
     }
 
     override fun setFavoriteMovie(film: Film, state: Boolean) {
-        TODO("Not yet implemented")
+        GlobalScope.launch(Dispatchers.IO) {
+            localDataSource.setFavoriteFilm(DataMapper.mapDomainToEntity(film), state)
+        }
     }
+
+    override suspend fun getFavoriteState(film: Film): Boolean {
+        return localDataSource.isFilmLiked(film.id)
+    }
+
 
 }

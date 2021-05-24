@@ -12,4 +12,6 @@ interface IFilmRepository {
     fun getMovieDetail(movieId: Int): Flow<Resource<Film>>
     fun getFavoriteFilms(): Flow<List<Film>>
     fun setFavoriteMovie(film: Film, state: Boolean)
+
+    suspend fun getFavoriteState(film: Film): Boolean
 }
