@@ -5,6 +5,7 @@ import android.graphics.BlendMode
 import android.graphics.BlendModeColorFilter
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.view.Menu
@@ -13,7 +14,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.twentythirty.androidexpert.R
 import com.twentythirty.androidexpert.databinding.ActivityMainBinding
-import com.twentythirty.androidexpert.ui.favorite.FavoriteActivity
 import com.twentythirty.core.data.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.fav -> {
-                val intent = Intent(this, FavoriteActivity::class.java)
-                startActivity(intent)
+                val uri = Uri.parse("topanapp://favs")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         return super.onOptionsItemSelected(item)

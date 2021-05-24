@@ -1,4 +1,4 @@
-package com.twentythirty.androidexpert.ui.favorite
+package com.twentythirty.favorite
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

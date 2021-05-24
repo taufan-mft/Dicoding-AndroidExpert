@@ -1,7 +1,6 @@
 package com.twentythirty.androidexpert.di
 
 import com.twentythirty.androidexpert.ui.detail.DetailViewModel
-import com.twentythirty.androidexpert.ui.favorite.FavoriteViewModel
 import com.twentythirty.androidexpert.ui.home.HomeViewModel
 import com.twentythirty.core.domain.usecase.FilmInteractor
 import com.twentythirty.core.domain.usecase.FilmUseCase
@@ -19,6 +18,5 @@ object AppModule {
     val viewModelModule = module {
         viewModel { HomeViewModel(get()) }
         viewModel { DetailViewModel(get()) }
-        viewModel { FavoriteViewModel(get()) }
     }
 }

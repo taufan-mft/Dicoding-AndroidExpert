@@ -17,4 +17,5 @@ dependencies {
 
     //koin
     implementation "io.insert-koin:koin-android:3.0.1"
+    implementation 'com.makeramen:roundedimageview:2.3.0'
 }
