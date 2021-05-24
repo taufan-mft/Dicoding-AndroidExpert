@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Android Expert</string>
     <string name="title_favorite">Favorite</string>
+    <string name="film_poster">Film Poster</string>
+    <string name="wawawa">Wawawa</string>
+    <string name="army_of_the_dead">Army of the Dead</string>
 </resources>

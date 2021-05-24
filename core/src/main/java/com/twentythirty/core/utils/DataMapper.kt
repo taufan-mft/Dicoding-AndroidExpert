@@ -5,7 +5,6 @@ import com.twentythirty.core.data.source.remote.response.FilmDetailResponse
 import com.twentythirty.core.data.source.remote.response.FilmRatingResponse
 import com.twentythirty.core.data.source.remote.response.FilmResponse
 import com.twentythirty.core.domain.model.Film
-import com.twentythirty.core.domain.model.FilmMin
 import java.util.*
 
 /**
@@ -19,19 +18,6 @@ object DataMapper {
             photo = film.posterPath,
             year = film.year
         )
-
-    fun mapEntitiesToUi(filmEntity: List<FilmEntity>): List<FilmMin> {
-        val list = mutableListOf<FilmMin>()
-        for (film in filmEntity) {
-            val payload = FilmMin(
-                id = film.id,
-                title = film.title,
-                year = film.year
-            )
-            list.add(payload)
-        }
-        return list
-    }
 
     fun mapEntitiesToDomain(film: List<FilmEntity>): List<Film> {
         val list = mutableListOf<Film>()

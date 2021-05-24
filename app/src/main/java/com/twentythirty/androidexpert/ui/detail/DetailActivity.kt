@@ -3,6 +3,7 @@ package com.twentythirty.androidexpert.ui.detail
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +34,7 @@ class DetailActivity : AppCompatActivity() {
         supportActionBar?.setDisplayShowTitleEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
+        setVisibility(View.GONE)
         setObservers()
 
     }
@@ -81,6 +83,8 @@ class DetailActivity : AppCompatActivity() {
                         binding.txTags.text = data.tags
                         binding.txYear.text = data.year
                         binding.txOverview.text = data.overview
+                        binding.progressBar2.visibility = View.GONE
+                        setVisibility(View.VISIBLE)
                     }
                     Status.ERROR -> {
                         Toast.makeText(this, resource.message, Toast.LENGTH_SHORT)
@@ -88,6 +92,22 @@ class DetailActivity : AppCompatActivity() {
                 }
             }
         })
+    }
+
+    private fun setVisibility(state: Int) {
+        with(binding) {
+            posterBackDrop.visibility = state
+            imgPoster.visibility = state
+            txTitle.visibility = state
+            txAge.visibility = state
+            imageView.visibility = state
+            txRating.visibility = state
+            txTags.visibility = state
+            txYear.visibility = state
+            overview.visibility = state
+            txOverview.visibility = state
+            floatingActionButton.visibility = state
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

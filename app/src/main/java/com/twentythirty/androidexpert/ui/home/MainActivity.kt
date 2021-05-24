@@ -10,6 +10,8 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import com.twentythirty.androidexpert.R
@@ -67,9 +69,14 @@ class MainActivity : AppCompatActivity() {
         homeViewModel.films.observe(this, { paket ->
             when (paket.status) {
                 Status.SUCCESS -> {
+                    binding.progressBar.visibility = View.GONE
                     paket.data?.let {
                         adapter.setData(it)
                     }
+                }
+                Status.ERROR -> {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, paket.message, Toast.LENGTH_SHORT).show()
                 }
             }
         })
