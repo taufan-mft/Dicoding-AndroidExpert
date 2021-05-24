@@ -9,4 +9,6 @@ import kotlinx.coroutines.flow.Flow
  */
 interface FilmUseCase {
     fun getAllFilms(): Flow<Resource<List<Film>>>
+
+    fun getFilmDetail(movieId: Int): Flow<Resource<Film>>
 }

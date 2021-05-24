@@ -1,10 +1,12 @@
 package com.twentythirty.androidexpert.ui.home
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.twentythirty.androidexpert.databinding.ItemRowFilmBinding
+import com.twentythirty.androidexpert.ui.detail.DetailActivity
 import com.twentythirty.core.domain.model.Film
 
 /**
@@ -22,6 +24,11 @@ class FilmAdapter : RecyclerView.Adapter<FilmAdapter.FilmViewHolder>() {
                     .with(imgView.context)
                     .load("https://image.tmdb.org/t/p/original/${film.posterPath}")
                     .into(imgView)
+            }
+            itemView.setOnClickListener {
+                val intent = Intent(itemView.context, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.ID_TAG, film.id)
+                itemView.context.startActivity(intent)
             }
         }
 

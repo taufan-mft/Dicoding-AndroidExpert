@@ -7,7 +7,6 @@ import com.twentythirty.core.data.source.local.room.FilmDatabase
 import com.twentythirty.core.data.source.remote.RemoteDataSource
 import com.twentythirty.core.data.source.remote.network.TmApi
 import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -18,7 +17,7 @@ object Koin {
     val networkModule = module {
         single {
             OkHttpClient.Builder()
-                .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                //.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
                 .connectTimeout(120, TimeUnit.SECONDS)
                 .readTimeout(120, TimeUnit.SECONDS)
                 .build()

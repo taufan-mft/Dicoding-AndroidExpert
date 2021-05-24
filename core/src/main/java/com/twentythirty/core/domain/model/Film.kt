@@ -12,5 +12,6 @@ data class Film(
     val voteAverage: String,
     val year: String,
     val overview: String,
-    val rating: String?
+    val rating: String?,
+    val tags: String?
 )

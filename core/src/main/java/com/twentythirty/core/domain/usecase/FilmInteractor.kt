@@ -10,4 +10,7 @@ import kotlinx.coroutines.flow.Flow
  */
 class FilmInteractor(private val filmRepository: FilmRepository) : FilmUseCase {
     override fun getAllFilms(): Flow<Resource<List<Film>>> = filmRepository.getFilms()
+    override fun getFilmDetail(movieId: Int): Flow<Resource<Film>> =
+        filmRepository.getMovieDetail(movieId)
+
 }

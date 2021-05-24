@@ -23,6 +23,7 @@
     <style name="CustomActionBar" parent="Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="background">@color/white</item>
         <item name="titleTextStyle">@style/Theme.AppLib.ActionBar.TitleTextStyle</item>
+        <item name="buttonGravity">center_vertical</item>
     </style>
 
     <style name="Theme.AppLib.ActionBar.TitleTextStyle" parent="">
@@ -30,5 +31,10 @@
         <item name="android:color">@color/black</item>
         <item name="android:textSize">22sp</item>
         <item name="android:fontFamily">@font/raleway_bold</item>
+    </style>
+
+    <style name="Theme.AndroidExpert.NoActionBar" parent="Theme.AndroidExpert">
+        <item name="android:windowDrawsSystemBarBackgrounds">false</item>
+        <item name="android:windowTranslucentStatus">true</item>
     </style>
 </resources>

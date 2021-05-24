@@ -38,8 +38,12 @@ class FilmRepository(
 
     }
 
-    override fun getMovieDetail(movieId: Int): Flow<Film> {
-        TODO("Not yet implemented")
+    override fun getMovieDetail(movieId: Int): Flow<Resource<Film>> {
+        return flow {
+            val response = remoteDataSource.getFilmDetail(movieId)
+            val ratingResponse = remoteDataSource.getFilmRating(movieId)
+            emit(Resource.success(DataMapper.mapResponsesToDomain(response, ratingResponse)))
+        }
     }
 
     override fun getFavoriteFilms(): Flow<List<Film>> {

@@ -9,7 +9,7 @@ import kotlinx.coroutines.flow.Flow
  */
 interface IFilmRepository {
     fun getFilms(): Flow<Resource<List<Film>>>
-    fun getMovieDetail(movieId: Int): Flow<Film>
+    fun getMovieDetail(movieId: Int): Flow<Resource<Film>>
     fun getFavoriteFilms(): Flow<List<Film>>
     fun setFavoriteMovie(film: Film, state: Boolean)
 }
