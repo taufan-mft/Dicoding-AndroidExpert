@@ -3,8 +3,8 @@ package com.twentythirty.favorite
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
-import com.twentythirty.androidexpert.databinding.ActivityFavoriteBinding
 import com.twentythirty.androidexpert.ui.home.FilmAdapter
+import com.twentythirty.favorite.databinding.ActivityFavoriteBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.context.loadKoinModules
 
