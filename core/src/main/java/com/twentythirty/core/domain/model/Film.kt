@@ -8,7 +8,7 @@ data class Film(
     val title: String,
     val releaseDate: String,
     val posterPath: String,
-    val backdropPath: String,
+    val backdropPath: String?,
     val voteAverage: String,
     val year: String,
     val overview: String,

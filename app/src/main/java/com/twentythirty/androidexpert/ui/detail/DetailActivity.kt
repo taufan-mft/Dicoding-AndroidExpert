@@ -44,9 +44,11 @@ class DetailActivity : AppCompatActivity() {
             if (!isLiked) {
                 detailViewModel.setFavoriteFilm(film, true)
                 binding.floatingActionButton.setColorFilter(Color.WHITE)
+                isLiked = true
             } else {
                 detailViewModel.setFavoriteFilm(film, false)
                 binding.floatingActionButton.setColorFilter(Color.BLACK)
+                isLiked = false
             }
         }
     }
@@ -87,6 +89,7 @@ class DetailActivity : AppCompatActivity() {
                         setVisibility(View.VISIBLE)
                     }
                     Status.ERROR -> {
+                        binding.progressBar2.visibility = View.GONE
                         Toast.makeText(this, resource.message, Toast.LENGTH_SHORT)
                     }
                 }

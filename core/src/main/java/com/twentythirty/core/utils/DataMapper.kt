@@ -60,7 +60,10 @@ object DataMapper {
         var ageRating = "N/A"
         for (rating in ratingResponse.results) {
             if (rating.iso31661 == Locale.US.country) {
-                ageRating = rating.releaseDates[0].certification
+                if (rating.releaseDates[0].certification.isNotEmpty()) {
+                    ageRating = rating.releaseDates[0].certification
+                }
+
             }
         }
         val builder = StringBuilder()
