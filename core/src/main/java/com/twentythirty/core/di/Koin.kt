@@ -6,6 +6,7 @@ import com.twentythirty.core.data.source.local.LocalDataSource
 import com.twentythirty.core.data.source.local.room.FilmDatabase
 import com.twentythirty.core.data.source.remote.RemoteDataSource
 import com.twentythirty.core.data.source.remote.network.TmApi
+import com.twentythirty.core.domain.repository.IFilmRepository
 import okhttp3.OkHttpClient
 import org.koin.android.ext.koin.androidContext
 import org.koin.dsl.module
@@ -46,7 +47,7 @@ object Koin {
     val repositoryModule = module {
         single { LocalDataSource(get()) }
         single { RemoteDataSource(get()) }
-        single {
+        single<IFilmRepository> {
             FilmRepository(
                 get(),
                 get()
